@@ -3,11 +3,17 @@ body {
 	color: #fff;
 	text-align: center;
 	margin: auto;
+	display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 #clock {
-	margin-top: 7%;
+	display: table-cell;
+    vertical-align: middle;
 }
+
 #clock .counter_part {
 	display: inline-block;
 	font-family: Arial;
