@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coding Project Countdown</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div id="clock">
+	<div class="text" style="font-size: 80px; line-height: 163.688px;"> 
+			WHO WILL BE THE CHAMPION
+			
+		</div>
+		<div class="counter_part" id="day_wrapper">
+			<div class="unit_value" id="day" style="font-size: 127px; line-height: 163.688px;"> 00</div>
+			<div class="unit_name" style="font-size: 39px; line-height: 40.9219px;">DAYS</div>
+		</div>
+
+		<div class="counter_part colon" id="colon_day" style="display: inline-block;">
+			<div class="unit_value" style="font-size: 127px; line-height: 163.688px;">:</div>
+			<div class="unit_name" style="font-size: 39px; line-height: 40.9219px;">&nbsp;</div>
+		</div>
+
+		<div class="counter_part" id="hour_wrapper">
+			<div class="unit_value" id="hour" style="font-size: 127px; line-height: 163.688px;"> 00 </div>
+			<div class="unit_name" style="font-size: 39px; line-height: 40.9219px;">HOURS</div>
+		</div>
+
+		<div class="counter_part colon" id="colon_hour" style="display: inline-block;">
+			<div class="unit_value" style="font-size: 127px; line-height: 163.688px;">:</div>
+			<div class="unit_name" style="font-size: 39px; line-height: 40.9219px;">&nbsp;</div>
+		</div>
+
+		<div class="counter_part" id="minute_wrapper">
+			<div class="unit_value" id="minute" style="font-size: 127px; line-height: 163.688px;"> 00 </div>
+			<div class="unit_name" style="font-size: 39px; line-height: 40.9219px;">MINUTES</div>
+		</div>
+
+		<div class="counter_part colon" id="colon_minute" style="display: inline-block;">
+			<div class="unit_value" style="font-size: 127px; line-height: 163.688px;">:</div>
+			<div class="unit_name" style="font-size: 39px; line-height: 40.9219px;">&nbsp;</div>
+		</div>
+
+		<div class="counter_part" id="second_wrapper">
+			<div class="unit_value" id="second" style="font-size: 127px; line-height: 163.688px;"> 00 </div>
+			<div class="unit_name" style="font-size: 39px; line-height: 40.9219px;">SECONDS</div>
+		</div>
+		<br><br><br>
+		<div class="text" style="font-size: 80px; line-height: 163.688px;"> 
+			<div>#JSCLUB   #CODINGPROJECT</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 21, 2017 18:45:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    //document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    //+ minutes + "m " + seconds + "s ";
+    if (day >=0 && days < 10) {
+    	document.getElementById("day").innerHTML = "0" + days;
+    } else {
+    	document.getElementById("day").innerHTML = days;
+    }
+    if (hours >=0 && hours < 10) {
+    	document.getElementById("hour").innerHTML = "0" + hours;
+    } else {
+    	document.getElementById("hour").innerHTML = hours;
+    }
+
+
+    if (minutes >=0 && minutes < 10) {
+    	document.getElementById("minute").innerHTML = "0" + minutes;
+    } else {
+    	document.getElementById("minute").innerHTML = minutes;
+    }
+
+
+    if (seconds >=0 && seconds < 10) {
+
+
+    	document.getElementById("second").innerHTML = "0" + seconds;
+    } else {
+    	document.getElementById("second").innerHTML = seconds;
+    }
+    // If the count down is over, write some text 
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("day").innerHTML = "00";
+    	document.getElementById("hour").innerHTML = "00";
+    	document.getElementById("minute").innerHTML = "00";
+    	document.getElementById("second").innerHTML = "00";
+    }
+}, 1000);
+</script>
